@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+
+    <input type="text" id="search"></input>
+    <button onclick="func()" >SEARCH</button>
+    <div id="term"></div>
+    <script>
+            function func() {
+                var term=document.getElementById("search").value;
+
+                var p=term.split("/");
+                var t0=p[0];
+                var t1=p[1];
+                if(t0.localeCompare("@wiki")==0){
+                    location.href="http://en.wikipedia.org/wiki/"+t1;
+                }
+                else
+                    document.getElementById("term").innerHTML="Enter valid term";
+            }
+    </script>
+  </body>
+</html>
